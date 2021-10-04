@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Momentum App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="menu">
+        <div class="menu__header">
+          <button
+            class="menu__header__btn"
+            data-key="header-icon"
+            data-value="scroll"
+          >
+            <i
+              class="fas fa-bars"
+              data-key="header-icon"
+              data-value="scroll"
+            ></i>
+          </button>
+          <button
+            class="menu__header__text"
+            data-key="header-text"
+            data-value="scroll"
+          >
+            Menu
+          </button>
+        </div>
+        <div class="menu__content">
+          <div class="menu__vertical"></div>
+          <ul class="menu__list">
+            <li class="menu__title menu-home">
+              <button class="menu__title-btn" data-value="Home">Home</button>
+            </li>
+            <li class="menu__item menu-todo">
+              <button class="menu__item__btn" data-value="Todo">Todo</button>
+            </li>
+            <li class="menu__title menu-movie">
+              <button class="menu__title-btn" data-value="Movie">Movie</button>
+            </li>
+            <li class="menu__item menu-scene">
+              <button class="menu__item__btn" data-value="Scene">Scene</button>
+            </li>
+            <li class="menu__item menu-illust">
+              <button class="menu__item__btn" data-value="Illust">
+                Illust
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="clock">00:00:00</div>
+
+      <form class="hidden" id="login-form">
+        <input
+          required
+          maxlength="15"
+          type="text"
+          placeholder="What is your name?"
+        />
+        <input type="submit" value="Log In" />
+      </form>
+
+      <h1 class="hidden" id="greeting"></h1>
+
+      <div id="quote">
+        <span></span>
+      </div>
+
+      <form id="todo-form">
+        <input
+          type="text"
+          placeholder="Write a To Do and Press Enter"
+          required
+        />
+      </form>
+      <ul id="todo-list"></ul>
+
+      <div id="weather">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="js/menu.js"></script>
+  </body>
+</html>
