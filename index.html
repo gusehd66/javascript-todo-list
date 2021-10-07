@@ -1,98 +1,210 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day6-Todo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/motion.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Momentum App</title>
   </head>
+
   <body>
-    <div class="container">
-      <div class="menu">
-        <div class="menu__header">
-          <button
-            class="menu__header__btn"
-            data-key="header-icon"
-            data-value="scroll"
-          >
-            <i
-              class="fas fa-bars"
-              data-key="header-icon"
-              data-value="scroll"
-            ></i>
-          </button>
-          <button
-            class="menu__header__text"
-            data-key="header-text"
-            data-value="scroll"
-          >
-            Menu
-          </button>
+    <article class="contentWrap">
+      <header>
+        <div id="clock">00:00:00</div>
+        <div id="weather">
+          <span></span>
+          <span></span>
         </div>
-        <div class="menu__content">
-          <div class="menu__vertical"></div>
-          <ul class="menu__list">
-            <li class="menu__title menu-home">
-              <button class="menu__title-btn" data-value="Home">Home</button>
-            </li>
-            <li class="menu__item menu-todo">
-              <button class="menu__item__btn" data-value="Todo">Todo</button>
-            </li>
-            <li class="menu__title menu-movie">
-              <button class="menu__title-btn" data-value="Movie">Movie</button>
-            </li>
-            <li class="menu__item menu-scene">
-              <button class="menu__item__btn" data-value="Scene">Scene</button>
-            </li>
-            <li class="menu__item menu-illust">
-              <button class="menu__item__btn" data-value="Illust">
-                Illust
-              </button>
-            </li>
-          </ul>
+      </header>
+
+      <section class="intro">
+        <div class="login">
+          <form class="hidden" id="login-form">
+            <input
+              required
+              maxlength="15"
+              type="text"
+              placeholder="What is your name?"
+            />
+            <input type="submit" value="확인" />
+          </form>
+          <h1 class="hidden" id="greeting"></h1>
         </div>
-      </div>
 
-      <div id="clock">00:00:00</div>
+        <div id="quote">
+          <span></span>
+        </div>
+      </section>
 
-      <form class="hidden" id="login-form">
-        <input
-          required
-          maxlength="15"
-          type="text"
-          placeholder="What is your name?"
-        />
-        <input type="submit" value="Log In" />
-      </form>
+      <section class="todo">
+        <form id="todo-form">
+          <input
+            type="text"
+            placeholder="Write a To Do and Press Enter"
+            required
+          />
+        </form>
+        <ul id="todo-list"></ul>
+      </section>
 
-      <h1 class="hidden" id="greeting"></h1>
+      <section class="album">
+        <div class="bgm_box">
+          <audio
+            controls
+            controlsList="nodownload"
+            src="bgm/Congratulations.mp3"
+            type="audio/mp3"
+            id="bgm"
+          ></audio>
+        </div>
 
-      <div id="quote">
-        <span></span>
-      </div>
+        <div class="disk">
+          <div class="disk_inner"></div>
+        </div>
+        <a href="https://youtu.be/x3sFsHrUyLQ" target="blank" class="coverImg">
+          <img src="./image/day6_0.jpg" alt="day6" />
+        </a>
+      </section>
 
-      <form id="todo-form">
-        <input
-          type="text"
-          placeholder="Write a To Do and Press Enter"
-          required
-        />
-      </form>
-      <ul id="todo-list"></ul>
+      <section class="album">
+        <div class="bgm_box">
+          <audio
+            controls
+            controlsList="nodownload"
+            src="bgm/놓아놓아놓아.mp3"
+            type="audio/mp3"
+            id="bgm"
+          ></audio>
+        </div>
+        <div class="disk">
+          <div class="disk_inner"></div>
+        </div>
+        <a
+          href="https://www.youtube.com/watch?v=1-1TGNmQqZA&list=OLAK5uy_njU4zdxpDTVPyOJnJp8oQvLjxSW4gUvmU&index=3"
+          target="blank"
+          class="coverImg"
+        >
+          <img src="./image/day6_1.jpg" alt="" />
+        </a>
+      </section>
 
-      <div id="weather">
-        <span></span>
-        <span></span>
-      </div>
+      <section class="album">
+        <div class="bgm_box">
+          <audio
+            controls
+            controlsList="nodownload"
+            src="bgm/예뻤어.mp3"
+            type="audio/mp3"
+            id="bgm"
+          ></audio>
+        </div>
+        <div class="disk">
+          <div class="disk_inner"></div>
+        </div>
+        <a
+          href="https://www.youtube.com/watch?v=BS7tz2rAOSA&list=OLAK5uy_meN-kKVpM3rhbJFqXWC-545jtClpeSNsQ"
+          target="blank"
+          class="coverImg"
+        >
+          <img src="./image/day6_2.jpg" alt="" />
+        </a>
+      </section>
+
+      <section class="album">
+        <div class="bgm_box">
+          <audio
+            controls
+            controlsList="nodownload"
+            src="bgm/반드시웃는다.mp3"
+            type="audio/mp3"
+            id="bgm"
+          ></audio>
+        </div>
+        <div class="disk">
+          <div class="disk_inner"></div>
+        </div>
+        <a
+          href="https://www.youtube.com/watch?v=g4V36AfI4Ng&list=OLAK5uy_nuCjRIbS1lraoSDGmkc5DNJXMYmJ0Jd74&index=2"
+          target="blank"
+          class="coverImg"
+        >
+          <img src="./image/day6_3.jpg" alt="" />
+        </a>
+      </section>
+
+      <section class="album">
+        <div class="bgm_box">
+          <audio
+            controls
+            controlsList="nodownload"
+            src="bgm/I Loved You.mp3"
+            type="audio/mp3"
+            id="bgm"
+          ></audio>
+        </div>
+        <div class="disk">
+          <div class="disk_inner"></div>
+        </div>
+        <a
+          href="https://www.youtube.com/watch?v=EwLMA5XYnKI&list=OLAK5uy_lq5UCrxsnz9nDd8pC6l3EfX5sPVb9IpU4"
+          target="blank"
+          class="coverImg"
+        >
+          <img src="./image/day6_4.jpg" alt="" />
+        </a>
+      </section>
+
+      <section class="album">
+        <div class="bgm_box">
+          <audio
+            controls
+            controlsList="nodownload"
+            src="bgm/좋아합니다.mp3"
+            type="audio/mp3"
+            id="bgm"
+          ></audio>
+        </div>
+        <div class="disk">
+          <div class="disk_inner"></div>
+        </div>
+        <a
+          href="https://www.youtube.com/watch?v=daoMYJv8i0c&list=OLAK5uy_kX0F08ONb9_KoVjqmQAiWT0stl3q2_3K8&index=2"
+          target="blank"
+          class="coverImg"
+        >
+          <img src="./image/day6_5.jpg" alt="" />
+        </a>
+      </section>
+    </article>
+
+    <div class="buttonWrap">
+      <button type="button" class="PREV">PREV</button>
+      <ul class="pointWrap">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <button type="button" class="NEXT">NEXT</button>
     </div>
 
-    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
-    <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
-    <script src="js/menu.js"></script>
+    <script src="./js/motion_3_mobile.js"></script>
   </body>
 </html>

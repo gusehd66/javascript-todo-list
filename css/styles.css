@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "yg-jalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .hidden {
   display: none;
 }
@@ -8,174 +16,91 @@ body {
   display: flex;
   justify-content: center;
   min-width: 600px;
+  font-size: 16px;
+  font-family: yg-jalnan;
 }
 
-img {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-}
-
-.container {
-  margin-top: 12%;
-  text-align: center;
-  width: 80%;
-}
-
-#clock {
-  font-size: 100px;
-}
-
-/* menu */
-.menu {
-  position: fixed;
-  width: 20%;
-  top: 10%;
-  left: 3%;
+/* header */
+header {
   display: flex;
-  color: black;
-  flex-direction: column;
-}
-
-.menu__header {
-  padding: 5px;
-  display: flex;
-  margin-bottom: 5px;
-}
-
-.menu__header__btn {
-  text-align: center;
-  width: 40px;
-  height: 40px;
-  font-size: 20px;
-  padding: 0;
-  cursor: pointer;
-  border-radius: 50%;
-  border: solid white 2px;
-  margin-right: 10px;
-  transform: rotate(0deg);
-  transition: all 0.3s ease;
-}
-
-.menu__header__text {
-  font-size: 35px;
-  transition: all 0.3s ease;
-  border: solid white 2px;
-}
-
-.menu .menu__header__btn:hover {
-  transform: rotate(90deg);
-  background-color: white;
-  color: #efefef;
-}
-
-.menu__content {
-  display: flex;
-}
-
-.menu__vertical {
-  width: 4px;
-  height: 300px;
-  background-color: white;
-  margin-left: 11%;
-}
-
-.menu__list {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.menu__item {
-  list-style: none;
-}
-
-.menu__title,
-.menu__item {
-  width: 100%;
-  padding: 10px;
-  text-align: left;
-  transition: all 0.3s ease-in-out;
-}
-
-.menu__title:hover,
-.menu__item:hover {
-  color: white;
-}
-
-.menu__title-btn {
+  justify-content: space-between;
+  padding: 30px;
   font-size: 30px;
 }
 
-.menu__item__btn {
-  font-size: 25px;
-  text-align: center;
-}
-
-.menu-todo {
-  display: none;
-}
-
-.menu__vertical,
-.menu-home,
-.menu-todo,
-.menu-movie,
-.menu-scene,
-.menu-illust {
-  opacity: 0;
+header #weather {
+  font-size: 20px;
+  text-align: end;
 }
 
 /* login */
-#login-form {
-  margin-top: 90px;
-  height: 150px;
+.intro {
+  position: absolute;
+  left: 53%;
+  top: 20%;
+  width: 600px;
+  z-index: 1;
 }
 
-#login-form input {
-  height: 60px;
+#login-form {
+  height: 40px;
 }
+
 #login-form input::placeholder {
+  padding: 5px 10px;
   font-size: 20px;
 }
 
 #login-form input:first-child {
   width: 200px;
-  border: solid 1px gray;
-  font-size: 25px;
+  height: 100%;
+  font-size: 20px;
+  padding: 0;
+  box-sizing: border-box;
+  border: solid 4px gray;
 }
 
 #login-form input:last-child {
-  border: solid 1px gray;
-  border-radius: 50%;
+  position: relative;
+  top: -1px;
+  left: -5px;
+  border: solid 4px gray;
+  width: 50px;
+  height: 100%;
   font-weight: 700;
   cursor: pointer;
-  align-items: center;
-  margin-left: 15px;
 }
 
-#login-form h1 {
-  font-size: 60px;
+.login h1 {
+  font-size: 40px;
 }
 
 /* quote */
 #quote {
-  font-size: 20px;
-  color: grey;
-  height: 80px;
+  color: black;
   margin-top: 10px;
 }
 
 /* todo */
-#todo-form {
-  height: 60px;
+.todo {
+  padding-top: 15px;
+  position: absolute;
+  left: 53%;
+  top: 31%;
+  border-top: solid 4px grey;
+  z-index: 1;
 }
 
 #todo-form input {
-  font-size: 40px;
+  font-size: 20px;
+  width: 300px;
+  border: solid 3px grey;
+  border-radius: 20px;
+  padding: 4px 10px;
+  background-color: white;
 }
 
 #todo-form input::placeholder {
-  font-size: 30px;
   text-align: center;
 }
 
@@ -183,12 +108,14 @@ img {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-top: 10px;
 }
 
 #todo-list li {
-  font-size: 25px;
-  margin: 7px auto;
-  list-style: square;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  margin: 7px;
 }
 
 #todo-list li span {
@@ -196,5 +123,22 @@ img {
 }
 
 #todo-list li button {
-  font-size: 20px;
+  font-size: 15px;
+  text-align: end;
+}
+
+@media only screen and (max-width: 720px) {
+  body {
+    min-width: 0;
+  }
+
+  /* header */
+  header {
+    padding: 20px;
+    font-size: 20px;
+  }
+  header #weather {
+    width: 200px;
+    font-size: 15px;
+  }
 }
