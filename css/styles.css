@@ -107,8 +107,10 @@ header #weather {
 #todo-list {
   display: flex;
   flex-direction: column;
+  max-width: 300px;
   width: 100%;
   margin-top: 10px;
+  padding-bottom: 100px;
 }
 
 #todo-list li {
@@ -116,6 +118,10 @@ header #weather {
   justify-content: space-between;
   font-size: 20px;
   margin: 7px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 5px 10px;
+  width: 100%;
 }
 
 #todo-list li span {
@@ -124,7 +130,9 @@ header #weather {
 
 #todo-list li button {
   font-size: 15px;
+  margin: auto 0;
   text-align: end;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 720px) {
@@ -140,5 +148,17 @@ header #weather {
   header #weather {
     width: 200px;
     font-size: 15px;
+  }
+
+  .intro {
+    left: 5%;
+    width: 90%;
+    top: 50%;
+  }
+
+  .todo {
+    left: 5%;
+    top: 63%;
+    height: 200px;
   }
 }
