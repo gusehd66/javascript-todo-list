@@ -159,6 +159,6 @@ header #weather {
   .todo {
     left: 5%;
     top: 63%;
-    height: 200px;
+    height: auto;
   }
 }
