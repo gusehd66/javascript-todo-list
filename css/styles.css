@@ -71,8 +71,23 @@ header #weather {
   cursor: pointer;
 }
 
-.login h1 {
+.login span {
   font-size: 40px;
+}
+
+.logout {
+  font-size: 14px;
+  padding: 5px 5px;
+  margin-left: 20px;
+  background-color: #000;
+  color: #fff;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: #fff;
+  color: #000;
 }
 
 /* quote */
