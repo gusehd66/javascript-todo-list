@@ -31,45 +31,37 @@ function completeToDo(event) {
   complete.push(compltedTodo[0]);
   localStorage.setItem(COMPLETE_KEY, JSON.stringify(complete));
   deleteToDo(event);
-  paintToDo2(compltedTodo[0]);
+  paintToDo(compltedTodo[0], "확인", "취소", completeList, resetTodo);
 }
 
-function paintToDo(newTodo) {
+function resetTodo(event) {
+  const thisItem = event.target.parentElement.parentElement.id;
+  const compltedTodo = complete.filter(
+    (complete) => complete.id === parseInt(thisItem)
+  );
+  toDos.push(compltedTodo[0]);
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
+  deleteToDo(event);
+  paintToDo(compltedTodo[0], "❌", "⭕", toDoList, completeToDo);
+}
+
+function paintToDo(todo, btn1, btn2, list, btn2Click) {
   const li = document.createElement("li");
-  li.id = newTodo.id;
+  li.id = todo.id;
   const span = document.createElement("span");
-  span.innerText = newTodo.text;
+  span.innerText = todo.text;
   const buttons = document.createElement("span");
   const button = document.createElement("button");
   const button2 = document.createElement("button");
-  button.innerText = "❌";
-  button2.innerHTML = "⭕";
+  button.innerText = btn1;
+  button2.innerHTML = btn2;
   button.addEventListener("click", deleteToDo);
-  button2.addEventListener("click", completeToDo);
+  button2.addEventListener("click", btn2Click);
   li.appendChild(span);
   li.appendChild(buttons);
   buttons.appendChild(button);
   buttons.appendChild(button2);
-  toDoList.appendChild(li);
-}
-
-function paintToDo2(getTodo) {
-  const li = document.createElement("li");
-  li.id = getTodo.id;
-  const span = document.createElement("span");
-  span.innerText = getTodo.text;
-  const buttons = document.createElement("span");
-  const button = document.createElement("button");
-  const button2 = document.createElement("button");
-  button.innerText = "❌";
-  button2.innerHTML = "⭕";
-  // button.addEventListener("click", completeToDo2);
-  button2.addEventListener("click", deleteToDo);
-  li.appendChild(span);
-  li.appendChild(buttons);
-  buttons.appendChild(button);
-  buttons.appendChild(button2);
-  completeList.appendChild(li);
+  list.appendChild(li);
 }
 
 function handleToDoSubmit(event) {
@@ -81,7 +73,7 @@ function handleToDoSubmit(event) {
     id: Date.now(),
   };
   toDos.push(newTodoObj);
-  paintToDo(newTodoObj);
+  paintToDo(newTodoObj, "❌", "⭕", toDoList, completeToDo);
   saveToDos(toDos, TODOS_KEY);
 }
 
@@ -91,13 +83,20 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 const savedToDos = localStorage.getItem(TODOS_KEY);
 const savedComplted = localStorage.getItem(COMPLETE_KEY);
 
-const checkTodo = (todo, arr, i) => {
+const checkTodo = (todo, array) => {
   if (todo !== null) {
-    const parsedToDos = JSON.parse(todo);
-    arr = parsedToDos;
-    parsedToDos.forEach(i);
+    array = JSON.parse(todo);
+    if (todo === savedToDos) {
+      array.forEach((todo) =>
+        paintToDo(todo, "❌", "⭕", toDoList, completeToDo)
+      );
+    } else {
+      array.forEach((todo) =>
+        paintToDo(todo, "확인", "취소", completeList, resetTodo)
+      );
+    }
   }
 };
 
-checkTodo(savedToDos, toDos, paintToDo);
-checkTodo(savedComplted, complete, paintToDo2);
+checkTodo(savedToDos, toDos);
+checkTodo(savedComplted, complete);
