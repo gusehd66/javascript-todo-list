@@ -1,8 +1,8 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
+const completeBtn = document.querySelector("#complete-list span");
 const completeList = document.querySelector("#complete-list ul");
-
 const TODOS_KEY = "todos";
 const COMPLETE_KEY = "complete";
 
@@ -36,18 +36,19 @@ function completeToDo(event) {
 
 function resetTodo(event) {
   const thisItem = event.target.parentElement.parentElement.id;
-  const compltedTodo = complete.filter(
+  const resetTodo = complete.filter(
     (complete) => complete.id === parseInt(thisItem)
   );
-  toDos.push(compltedTodo[0]);
+  toDos.push(resetTodo[0]);
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
   deleteToDo(event);
-  paintToDo(compltedTodo[0], "❌", "⭕", toDoList, completeToDo);
+  paintToDo(resetTodo[0], "❌", "⭕", toDoList, completeToDo);
 }
 
 function paintToDo(todo, btn1, btn2, list, btn2Click) {
   const li = document.createElement("li");
   li.id = todo.id;
+  li.className = "list";
   const span = document.createElement("span");
   span.innerText = todo.text;
   const buttons = document.createElement("span");
@@ -78,6 +79,10 @@ function handleToDoSubmit(event) {
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+completeBtn.addEventListener("click", function () {
+  completeList.classList.toggle("hidden");
+});
 
 //가져오기
 const savedToDos = localStorage.getItem(TODOS_KEY);

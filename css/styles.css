@@ -128,7 +128,7 @@ header #weather {
   padding-bottom: 100px;
 }
 
-#todo-list li {
+.list {
   display: flex;
   justify-content: space-between;
   font-size: 20px;
@@ -141,20 +141,39 @@ header #weather {
   align-items: center;
 }
 
-#todo-list li span:nth-child(1) {
+.list span:nth-child(1) {
   margin-right: 20px;
-  max-width: 200px;
+  max-width: 190px;
 }
 
-#todo-list li button {
+.list span:nth-child(2) {
+  display: flex;
+}
+
+.list button {
   font-size: 15px;
   margin: auto 0;
   padding: 3px;
   cursor: pointer;
+  font-weight: 700;
+  border-radius: 5px;
 }
 
-#todo-list li button:nth-child(2) {
+.list button:nth-child(2) {
   margin-left: 5px;
+}
+
+#complete-list > span {
+  border: solid 3px grey;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+#complete-list ul {
+  margin-top: 10px;
 }
 
 @media only screen and (max-width: 720px) {
@@ -182,5 +201,13 @@ header #weather {
     left: 5%;
     top: 67%;
     height: auto;
+  }
+
+  #todo-list {
+    padding-bottom: 30px;
+  }
+
+  #complete-list {
+    padding-bottom: 100px;
   }
 }
