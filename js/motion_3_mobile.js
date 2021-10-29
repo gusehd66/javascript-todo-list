@@ -1,6 +1,7 @@
 const prev_button = document.querySelector(".PREV");
 const next_button = document.querySelector(".NEXT");
 const body = document.body;
+const disk = document.querySelectorAll(".disk");
 const disk_inner = document.querySelectorAll(".disk_inner");
 const album = document.querySelectorAll(".album");
 const pointBtnAll = document.querySelectorAll(".pointWrap li");
@@ -106,6 +107,7 @@ function pageChangeFunc() {
     ")";
 
   disk_inner[pageNum].style.background = bgArray[pageNum][2];
+  disk[pageNum].style.backgroundImage = `url("../image/day6_${pageNum}.jpg")`;
 
   for (let i = 0; i < totalNum; i++) {
     if (pageNum == i) {
