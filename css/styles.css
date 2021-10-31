@@ -194,12 +194,12 @@ header #weather {
   .intro {
     left: 5%;
     width: 90%;
-    top: 51%;
+    top: 53%;
   }
 
   .todo {
     left: 5%;
-    top: 67%;
+    top: 69%;
     height: auto;
   }
 

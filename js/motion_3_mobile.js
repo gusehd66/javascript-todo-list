@@ -114,7 +114,7 @@ function pageChangeFunc() {
     ")";
 
   disk_inner[pageNum].style.background = bgArray[pageNum][2];
-  disk[pageNum].style.backgroundImage = `url("../image/day6_${pageNum}.jpg")`;
+  disk[pageNum].style.backgroundImage = `url("./image/day6_${pageNum}.jpg")`;
 
   for (let i = 0; i < totalNum; i++) {
     if (pageNum == i) {
