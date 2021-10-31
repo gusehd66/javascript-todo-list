@@ -80,14 +80,6 @@ audio {
   border-radius: 50%;
 }
 
-.mobileDisk {
-  animation: rotateAni 4s linear infinite;
-  animation-delay: 0.6s;
-}
-.mobileTurnTable {
-  transform: rotate(36deg);
-}
-
 .contentWrap .album:hover .disk {
   animation: rotateAni 4s linear infinite;
   animation-delay: 0.6s;
@@ -152,6 +144,14 @@ audio {
     top: 20%;
     width: 270px;
     height: 230px;
+  }
+
+  .mobileDisk {
+    animation: rotateAni 4s linear infinite;
+    animation-delay: 0.6s;
+  }
+  .mobileTurnTable {
+    transform: rotate(36deg);
   }
 
   .contentWrap .album img:first-child {

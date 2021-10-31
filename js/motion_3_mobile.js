@@ -48,13 +48,14 @@ window.onload = function () {
   if (mobileChk()) {
     body.addEventListener("touchstart", touchFunc, false);
     body.addEventListener("touchend", touchFunc, false);
-    album.forEach((album, i) => {
-      album.addEventListener("click", () => {
-        disk[i].classList.toggle("mobileDisk");
-        turntable[i].classList.toggle("mobileTurnTable");
-      });
-    });
   }
+
+  // album.forEach((album, i) => {
+  //   album.addEventListener("click", () => {
+  //     disk[i].classList.toggle("mobileDisk");
+  //     turntable[i].classList.toggle("mobileTurnTable");
+  //   });
+  // });
 
   let start_X = 0;
   let end_X = 0;
@@ -121,9 +122,13 @@ function pageChangeFunc() {
       //현재 컨텐츠(페이지)
       album[i].classList.add("active");
       pointBtnAll[i].classList.add("active");
+      disk[i].classList.add("mobileDisk");
+      turntable[i].classList.toggle("mobileTurnTable");
     } else {
       album[i].classList.remove("active");
       pointBtnAll[i].classList.remove("active");
+      disk[i].classList.remove("mobileDisk");
+      turntable[i].classList.remove("mobileTurnTable");
     }
   }
 }
