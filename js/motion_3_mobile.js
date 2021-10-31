@@ -4,6 +4,7 @@ const body = document.body;
 const disk = document.querySelectorAll(".disk");
 const disk_inner = document.querySelectorAll(".disk_inner");
 const album = document.querySelectorAll(".album");
+const turntable = document.querySelectorAll(".album img:first-child");
 const pointBtnAll = document.querySelectorAll(".pointWrap li");
 
 let pageNum = 0;
@@ -47,6 +48,12 @@ window.onload = function () {
   if (mobileChk()) {
     body.addEventListener("touchstart", touchFunc, false);
     body.addEventListener("touchend", touchFunc, false);
+    album.forEach((album, i) => {
+      album.addEventListener("click", () => {
+        disk[i].classList.toggle("mobileDisk");
+        turntable[i].classList.toggle("mobileTurnTable");
+      });
+    });
   }
 
   let start_X = 0;
